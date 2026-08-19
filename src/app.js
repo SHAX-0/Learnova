@@ -1,11 +1,14 @@
 const express = require('express');
 const app = express();
 const authRoutes = require('./routes/authRoutes');
+const categoryRoutes = require('./routes/categoryRoutes');
 const userRoutes = require('./routes/userRoutes');
 const errorHandler = require('./middlewares/errorMiddleware');
 
 app.use(express.json());
 app.use('/api/auth', authRoutes);
+app.use('/api/categories', categoryRoutes);
+app.use('/api/courses', require('./routes/courseRoutes'));
 app.use('/api/users', userRoutes);
 
 app.get('/', (req, res) => {
