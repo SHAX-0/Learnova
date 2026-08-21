@@ -11,6 +11,7 @@ app.use('/api/categories', categoryRoutes);
 app.use('/api/courses', require('./routes/courseRoutes'));
 app.use('/api/enrollments', require('./routes/enrollmentRoutes'));
 app.use('/api/reviews', require('./routes/reviewRoutes'));
+app.use('/api/quizzes', require('./routes/quizRoutes'));
 app.use('/api/users', userRoutes);
 
 app.get('/', (req, res) => {
@@ -22,5 +23,6 @@ app.use((req, res) => {
 });
 
 app.use(errorHandler);
+
 
 module.exports = app;
